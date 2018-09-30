@@ -6,7 +6,14 @@ const createNotEnumerableProperty = (par) => {
    return prop;
 };
 const createProtoMagicObject = () => {};
-const incrementor = () => {};
+
+let count = 0;
+const incrementor = () => {
+    count++;
+    return incrementor;
+};
+incrementor.toString = () => count;
+
 const asyncIncrementor = () => {};
 const createIncrementer = () => {};
 
