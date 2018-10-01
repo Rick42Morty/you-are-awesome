@@ -5,7 +5,11 @@ const createNotEnumerableProperty = (par) => {
    let prop = Symbol(par);
    return prop;
 };
-const createProtoMagicObject = () => {};
+const createProtoMagicObject = () => {
+    function foo(){};
+    foo.prototype = foo.__proto__;
+    return foo;
+};
 
 let count = 0;
 const incrementor = () => {
