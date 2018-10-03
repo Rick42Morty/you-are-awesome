@@ -23,7 +23,18 @@ const createIncrementer = () => {};
 
 // return same argument not earlier than in one second, and not later, than in two
 const returnBackInSecond = () => {};
-const getDeepPropertiesCount = () => {};
+const getDeepPropertiesCount = (obj) => {
+    let counter = 0;
+    function count(obj) {
+      for (let key in obj) {
+        counter++;
+        count(obj[key]);
+      }
+    }
+    count(obj);
+  
+    return counter;
+  };
 const createSerializedObject = () => {
     let obj = new Number(10);
     return obj;
