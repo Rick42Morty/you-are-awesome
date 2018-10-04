@@ -22,7 +22,17 @@ const asyncIncrementor = () => {};
 const createIncrementer = () => {};
 
 // return same argument not earlier than in one second, and not later, than in two
-const returnBackInSecond = () => {};
+const returnBackInSecond = (par) => {
+    let promise = new Promise((resolve) => {
+
+        setTimeout(() => {
+          resolve();
+        }, 1100);
+      
+      });      
+      return promise.then(() => par);
+};
+
 const getDeepPropertiesCount = (obj) => {
     let counter = 0;
     function count(obj) {
