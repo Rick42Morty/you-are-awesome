@@ -25,7 +25,14 @@ const asyncIncrementor = () => {
 };
 asyncIncrementor.toString = () => count1;
 
-const createIncrementer = () => {};
+const createIncrementer = () => {
+    function* gen() { 
+        var index = 1;
+        while(true)
+            yield index++;
+      }
+    return gen();
+};
 
 // return same argument not earlier than in one second, and not later, than in two
 const returnBackInSecond = (par) => {

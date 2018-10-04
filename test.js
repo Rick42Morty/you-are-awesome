@@ -77,8 +77,9 @@ describe(('You are awesome, aren\'t you?'), () => {
     assert.equal(inc.next().value, 1);
     assert.equal(inc.next().value, 2);
     assert.equal(inc.next().value, 3);
+    assert.equal(inc.next().value, 4);
 
-    let current = 3;
+    let current = 4;
     for (let n of inc) {
       current++;
 
